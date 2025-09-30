@@ -1,14 +1,5 @@
 function [x_ref, y_ref, theta_ref] = generate_reference_trajectory(type, N_steps, dt, num_laps)
     % Generate practical reference trajectories for mobile robot control
-    % Inputs:
-    %   type - trajectory type: 'circle', 'figure_eight'
-    %   N_steps - total number of time steps
-    %   dt - time step size (sampling period)
-    %   num_laps - number of cycles/laps to complete
-    % Outputs:
-    %   x_ref - reference x-coordinates [1 x N_steps]
-    %   y_ref - reference y-coordinates [1 x N_steps]
-    %   theta_ref - reference orientation angles [1 x N_steps]
     
     t = 0:dt:(N_steps-1)*dt;
     total_time = (N_steps-1)*dt;
@@ -45,13 +36,6 @@ end
 
 function theta_ref = compute_smooth_angles(dx_dt, dy_dt, N_steps)
     % Compute smooth heading angles with rate limiting
-    % Prevents abrupt heading changes by limiting max angular change
-    % Inputs:
-    %   dx_dt - x-velocity components
-    %   dy_dt - y-velocity components
-    %   N_steps - number of time steps
-    % Output:
-    %   theta_ref - smoothed heading angles [rad]
     
     theta_ref = zeros(1, N_steps);
     theta_ref(1) = atan2(dy_dt(1), dx_dt(1));
