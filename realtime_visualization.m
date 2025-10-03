@@ -11,3 +11,5 @@ function realtime_visualization(x_ref, y_ref, x_history, x_current, ref_horizon,
     legend('Reference', 'Actual', 'Current Position', 'Prediction Horizon', 'Location', 'best');
     hold off;
 end
+
+
