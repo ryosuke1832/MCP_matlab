@@ -57,7 +57,7 @@ J = Σ (x_k − r_k)ᵀ Q (x_k − r_k) + u_kᵀ R u_k,   for k = 1 ... N_pred
 | Constraints   | `v_min`, `v_max`, `w_min`, `w_max` | Velocity and turn-rate limits   |
 | Noise         | `add_noise`                        | Enable/disable Gaussian noise   |
 | Visualization | `realtime_stride`                  | Plotting frequency              |
-
+| Offset        | `test_offsets`                     | Y offset of initial position    |
 ---
 
 ## Extended Evaluation: Horizon Sweep
